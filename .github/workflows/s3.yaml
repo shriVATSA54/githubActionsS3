@@ -77,22 +77,17 @@ jobs:
                 "OriginAccessControlId": "${OAC_ID}"
               }]
             },
-            "DefaultCacheBehavior": {
-              "TargetOriginId": "s3-origin",
-              "ViewerProtocolPolicy": "redirect-to-https",
-              "AllowedMethods": {
-                "Quantity": 2,
-                "Items": ["GET", "HEAD"]
-              },
-              "CachedMethods": {
-                "Quantity": 2,
-                "Items": ["GET", "HEAD"]
-              },
-              "ForwardedValues": {
-                "QueryString": false,
-                "Cookies": { "Forward": "none" }
-              }
-            },
+          "DefaultCacheBehavior": {
+          "TargetOriginId": "s3-origin",
+          "ViewerProtocolPolicy": "redirect-to-https",
+          "AllowedMethods": {
+          "Quantity": 2,
+          "Items": ["GET", "HEAD"]
+          },
+          "CachePolicyId": "658327ea-f89d-4fab-a63d-7e88639e58f6",
+          "OriginRequestPolicyId": "88a5eaf4-2fd4-4709-b370-b4c650ea3fcf",
+          "Compress": true
+          },
             "ViewerCertificate": {
               "CloudFrontDefaultCertificate": true
             }
